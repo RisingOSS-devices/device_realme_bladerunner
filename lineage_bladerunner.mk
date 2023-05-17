@@ -63,7 +63,7 @@ TARGET_USE_GOOGLE_TELEPHONY := true
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineahe_bladerunner
+PRODUCT_NAME := lineage_bladerunner
 PRODUCT_DEVICE := bladerunner
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2076
