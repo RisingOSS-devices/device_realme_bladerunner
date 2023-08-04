@@ -22,7 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # risingOS Stuffs
-RISING_MAINTAINER := 🅰🅰🅼🅸🆁_🅰🅻🅻🅸
+RISING_BUILDTYPE := OFFICIAL
+RISING_MAINTAINER := AAMIRR_ALI
 RISING_CHIPSET := SDM865-5G
 RISING_DEVICE := Bladerunner
 TARGET_FACE_UNLOCK_SUPPORTED := true
