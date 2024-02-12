@@ -21,44 +21,44 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common risingOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# risingOS Stuffs
-RISING_BUILDTYPE := OFFICIAL
-RISING_MAINTAINER := AAMIRR_ALI
-RISING_CHIPSET := SDM865-5G
-RISING_DEVICE := Bladerunner
-TARGET_FACE_UNLOCK_SUPPORTED := true
-USE_AOSP_CLOCK := true
-EXTRA_UDFPS_ANIMATIONS := true
-TARGET_INCLUDE_STOCK_ARCORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_SUPPORTS_QUICK_TAP := true
+# Call the BCR setup
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
-# Camera
-TARGET_BUILD_GRAPHENEOS_CAMERA := false
+#For official Devices:
+MATRIXX_BUILD_TYPE := Official
+MATRIXX_MAINTAINER := AAMIR_ALI
+MATRIXX_CHIPSET := SM8250
+MATRIXX_BATTERY := 4200mAh
+MATRIXX_DISPLAY := 1080x2400
 
-#TARGET_BUILD_APERTURE_CAMERA := true
-TARGET_EXCLUDES_APERTURE := false
+#EPPE
+TARGET_DISABLE_EPPE := true
 
-# UDFPS ICONS/ANIMATIONS
-TARGET_HAS_UDFPS := true
+#BOOT_ANIMATION
+TARGET_BOOT_ANIMATION_RES := 1440
 
-# disable/enable blur support, default is false
-TARGET_ENABLE_BLUR := true
+#AUDIOFX
+TARGET_EXCLUDES_AUDIOFX := true
 
-# GMS build flags, if none were defined the package build type will be AOSP (default: false)
+#Build with Gapps:
 WITH_GMS := true
 
-# Opt out of google dialer support, compiler will build aosp dialer,
-# package type will change from PIXEL -> GMS
-TARGET_OPTOUT_GOOGLE_TELEPHONY := true
+#Device has UDFPS:
+TARGET_HAS_UDFPS := true
 
-# Compiler will only build GMS playstore services, its dependencies, and Gboard app.
-# package type will change from PIXEL/GMS -> CORE
-TARGET_CORE_GMS := false
+#Blur effect
+TARGET_ENABLE_BLUR := true
 
-# Wether to use google (true) or AOSP (false) telephony package bundle. (defaults: false for gms core, true for pixel builds)
-TARGET_USE_GOOGLE_TELEPHONY := true
+#Add Google Contacts, Dialer & Messaging 
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_DIALER := true
+BUILD_GOOGLE_MESSAGE := true
+
+#Device has UDFPS:
+TARGET_HAS_UDFPS := true
+
+#Blur effect
+TARGET_ENABLE_BLUR := true
 
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
