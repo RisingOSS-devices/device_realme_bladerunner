@@ -60,6 +60,10 @@ TARGET_HAS_UDFPS := true
 #Blur effect
 TARGET_ENABLE_BLUR := true
 
+#Exclude Packages
+TARGET_EXCLUDES_AUXIO := true
+TARGET_EXCLUDES_VIA := true
+
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
