@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2024 The RisingOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,51 +18,30 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common risingOS stuff
+# Inherit some common RisingOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
-# Call the BCR setup
-$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
-
-#For official Devices:
-MATRIXX_BUILD_TYPE := Official
-MATRIXX_MAINTAINER := AAMIR_ALI
-MATRIXX_CHIPSET := SM8250
-MATRIXX_BATTERY := 4200mAh
-MATRIXX_DISPLAY := 1080x2400
 
 #EPPE
 TARGET_DISABLE_EPPE := true
 
-#BOOT_ANIMATION
-TARGET_BOOT_ANIMATION_RES := 1440
-
-#AUDIOFX
-TARGET_EXCLUDES_AUDIOFX := true
-
-#Build with Gapps:
+# RisingOS Stuffs
+RISING_BUILDTYPE := OFFICIAL
+RISING_MAINTAINER := AAMIRR ALI
+RISING_CHIPSET := SDM865-5G
+RISING_DEVICE := bladerunner
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
 WITH_GMS := true
+TARGET_CORE_GMS := true
+PRODUCT_NO_CAMERA := false
+USER_BUILD_NO_CHANGELOG := 1
 
-#Device has UDFPS:
-TARGET_HAS_UDFPS := true
 
-#Blur effect
-TARGET_ENABLE_BLUR := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_CHIPSET="Snapdragon® 865 5G" \
+    RISING_MAINTAINER="AAMIR_ALI" \
+    RISING_DEVICE="bladerunner"
 
-#Add Google Contacts, Dialer & Messaging 
-BUILD_GOOGLE_CONTACTS := true
-BUILD_GOOGLE_DIALER := true
-BUILD_GOOGLE_MESSAGE := true
-
-#Device has UDFPS:
-TARGET_HAS_UDFPS := true
-
-#Blur effect
-TARGET_ENABLE_BLUR := true
-
-#Exclude Packages
-TARGET_EXCLUDES_AUXIO := true
-TARGET_EXCLUDES_VIA := true
 
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
