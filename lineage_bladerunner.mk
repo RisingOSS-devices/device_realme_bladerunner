@@ -33,21 +33,18 @@ TARGET_DISABLE_EPPE := true
 # RisingOS Stuffs
 RISING_BUILDTYPE := OFFICIAL
 RISING_MAINTAINER := AAMIRR_ALI
-RISING_CHIPSET := SDM865-5G
 RISING_DEVICE := bladerunner
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
 WITH_GMS := true
 TARGET_CORE_GMS := true
 PRODUCT_NO_CAMERA := false
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
-TARGET_CORE_GMS_EXTRAS := true
 USER_BUILD_NO_CHANGELOG := 1
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     RISING_CHIPSET="Snapdragon® 865 5G" \
-    RISING_MAINTAINER="AAMIR_ALI" \
+    RISING_MAINTAINER="AAMIR ALI" \
     RISING_DEVICE="bladerunner"
 
 
@@ -55,7 +52,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_bladerunner
+PRODUCT_NAME := rising_bladerunner
 PRODUCT_DEVICE := bladerunner
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2076
