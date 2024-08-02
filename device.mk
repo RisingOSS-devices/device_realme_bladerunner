@@ -49,6 +49,10 @@ PRODUCT_PACKAGES += \
     OPlusSystemUIResTarget \
     OPlusSettingsResTarget
 
+# Remove packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/realme/bladerunner
