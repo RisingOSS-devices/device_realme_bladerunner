@@ -1,0 +1,40 @@
+[
+  {
+    "remote"      : "github",
+    "repository"  : "Matrixx-Devices/vendor_realme_bladerunner",
+    "branch"      : "udc",
+    "target_path" : "vendor/realme/bladerunner"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "Matrixx-Devices/vendor_realme_sm8250-common",
+    "branch"      : "udc",
+    "target_path" : "vendor/realme/sm8250-common"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "Matrixx-Devices/kernel_realme_sm8250",
+    "target_path" : "kernel/realme/sm8250"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "Chaitanyakm/vendor_bcr",
+    "target_path" : "vendor/bcr"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "Matrixx-Devices/hardware_oplus",
+    "branch"      : "wip",
+    "target_path" : "hardware/dolby"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "AAMIRR-ALI/hardware_dolby",
+    "target_path" : "hardware/oplus"
+  },
+  {
+    "remote"      : "github",
+    "repository"  : "Chaitanyakm/packages_apps_ViPER4AndroidFX",
+    "target_path" : "packages/apps/ViPER4AndroidFX"
+  }
+]
