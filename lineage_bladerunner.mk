@@ -27,6 +27,9 @@ $(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
 #Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
+#Bcr
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
 #EPPE
 TARGET_DISABLE_EPPE := true
 
@@ -59,7 +62,6 @@ PRODUCT_DEVICE := bladerunner
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2076
 PRODUCT_MANUFACTURER := realme
-
 PRODUCT_SYSTEM_NAME := RMX2076
 PRODUCT_SYSTEM_DEVICE := RMX2076L1
 
